@@ -29,6 +29,11 @@ def noida():
     return render_template('pages/noida.html')
 
 
+@app.route('/rudrapur')
+def rudrapur():
+    return render_template('pages/rudrapur.html')
+
+
 @app.route('/about')
 def about():
     return render_template('pages/about.html')
@@ -90,7 +95,7 @@ def sitemap_xml():
         '/', '/services', '/cities', '/bangalore', '/about',
         '/ac-repair', '/cassette-ac', '/vrf-ac', '/fridge-repair',
         '/washing-machine', '/geyser-repair', '/contact',
-        '/privacy-policy', '/noida'
+        '/privacy-policy', '/noida', '/rudrapur'
     ]
     urls = ''.join(
         f'<url><loc>https://www.aircooltechservices.com{path}</loc></url>'
