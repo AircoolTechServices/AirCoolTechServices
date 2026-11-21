@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}Air Cool Tech Services — Home{% endblock %}
+{% block title %}AC Repair & Installation in Bangalore and Noida | Air Cool Tech{% endblock %}
+{% block meta_description %}<meta name="description" content="Air Cool Tech Services offers AC repair, servicing, installation and maintenance enquiries in Bangalore and Noida, plus home appliance repair. Call or WhatsApp our team." />{% endblock %}
 
 {% block content %}
 
@@ -13,8 +14,7 @@
     <div class="slide-text">
       <span class="slide-tag">⚡ Trusted AC Experts</span>
       <h1>Expert <span class="highlight">AC Repair</span> &amp; Fast Installation Service</h1>
-      <p>Split, window, cassette, and VRF/VRV AC systems - our certified technicians restore your cooling in a single
-        visit, guaranteed.</p>
+      <p>AC repair and installation enquiries for split, window, cassette and VRF/VRV air-conditioning systems. Contact our team and share your AC issue and location.</p>
       <div class="slide-btns">
         <a href="{{ url_for('contact') }}" class="btn-primary">Book a Service</a>
         <a href="tel:+918630872674" class="btn-outline btn-hero-call">Call Now</a>
@@ -23,7 +23,7 @@
     <div class="slide-image">
       <img src="{{ url_for('static', filename='images/ac_installation.webp') }}" alt="AC Installation" />
       <div class="slide-image-overlay">
-        <span class="slide-image-badge">Same-Day Service</span>
+        <span class="slide-image-badge">AC Service Enquiries</span>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@
   <h2 class="section-heading">Find Us In Your <span>City</span></h2>
   <p class="section-sub">Fast and reliable repair services now available across three major Indian cities.</p>
   <div class="cities-grid">
-    <a href="{{ url_for('cities') }}#bangalore" class="city-card bangalore-card">
+    <a href="{{ url_for('bangalore') }}" class="city-card bangalore-card">
       <img src="{{ url_for('static', filename='images/bangalore.webp') }}" alt="Bangalore" />
       <div class="city-overlay"></div>
       <div class="city-info">
@@ -89,7 +89,7 @@
         <span class="city-tag">Available Now</span>
       </div>
     </a>
-    <a href="{{ url_for('cities') }}#Noida" class="city-card">
+    <a href="{{ url_for('noida') }}" class="city-card">
       <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&auto=format&fit=crop" alt="Noida" />
       <div class="city-overlay"></div>
       <div class="city-info">
@@ -215,7 +215,7 @@
 <section class="brands-section">
   <div class="section-label">✅ Brands We Service</div>
   <h2 class="section-heading">We Repair <span>All Major Brands</span></h2>
-  <p class="section-sub">Certified technicians trained on every leading AC &amp; appliance brand in India.</p>
+  <p class="section-sub">Contact us to check service availability for your AC or home appliance brand and model.</p>
 
   <div class="brands-grid">
 
