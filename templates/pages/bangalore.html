@@ -31,6 +31,47 @@
 </style>
 {% endblock %}
 
+{% block extra_js %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HVACBusiness",
+      "@id": "https://www.aircooltechservices.com/bangalore#business",
+      "name": "Air Cool Tech Services",
+      "url": "https://www.aircooltechservices.com/bangalore",
+      "telephone": "+91-86308-72674",
+      "areaServed": {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      "description": "AC repair, servicing, installation, uninstallation and maintenance enquiries across Bangalore."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.aircooltechservices.com/bangalore#ac-service",
+      "name": "AC Repair and Service in Bangalore",
+      "serviceType": [
+        "Air conditioner repair",
+        "Air conditioner servicing",
+        "Air conditioner installation",
+        "Air conditioner uninstallation",
+        "AC cleaning and maintenance"
+      ],
+      "provider": {
+        "@id": "https://www.aircooltechservices.com/bangalore#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bengaluru"
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <main>
 <section class="bng-hero">
