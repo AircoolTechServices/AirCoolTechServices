@@ -6,32 +6,58 @@
 
 {% block extra_css %}
 <style>
-.bng-wrap{color:#243247}.bng-hero{background:linear-gradient(125deg,#073b68,#168ac4);color:#fff;padding:72px 6%;text-align:center}
-.bng-hero-inner,.bng-section-inner{max-width:1120px;margin:auto}.bng-hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;margin:12px 0 18px;font-weight:900}.bng-hero p{max-width:780px;margin:0 auto 26px;line-height:1.75;font-size:1.05rem;color:#e8f5ff}
-.bng-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.bng-btn{display:inline-block;padding:13px 24px;border-radius:40px;text-decoration:none;font-weight:800}.bng-btn-light{background:#fff;color:#075184}.bng-btn-outline{border:2px solid #fff;color:#fff}
-.bng-section{padding:58px 6%}.bng-section.alt{background:#f4f9fc}.bng-kicker{text-transform:uppercase;letter-spacing:1.5px;color:#1385bd;font-weight:800;font-size:.8rem}.bng-section h2{font-size:clamp(1.55rem,3vw,2.25rem);margin:8px 0 16px;color:#123b5a}.bng-section p{line-height:1.8;color:#536579}
-.bng-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}.bng-card{background:#fff;border:1px solid #e2edf4;border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(15,65,95,.06)}.bng-card h3{color:#0c527f;margin:0 0 9px;font-size:1.08rem}.bng-card p{margin:0;font-size:.94rem}
-.bng-area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.bng-area{background:#e8f4fb;color:#15577e;border-radius:30px;padding:9px 15px;font-weight:700;font-size:.9rem}
-.bng-small-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.bng-small-grid a{background:#fff;border:1px solid #e1ebf1;padding:17px;border-radius:12px;text-decoration:none;color:#14547a;font-weight:800}
-.bng-faq details{background:#fff;border:1px solid #e0eaf0;border-radius:12px;padding:17px 20px;margin:12px 0}.bng-faq summary{font-weight:800;color:#174c70;cursor:pointer}.bng-faq details p{margin-bottom:0}
-.bng-final{background:#0b4772;color:#fff;text-align:center;padding:52px 6%}.bng-final h2{color:#fff}.bng-final p{color:#e1f2fc}
-@media(max-width:760px){.bng-grid,.bng-small-grid{grid-template-columns:1fr}.bng-hero{padding:54px 6%}.bng-section{padding:44px 6%}}
+.bng-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 12% 10%,#1c6799 0,#0a3458 48%,#071f38 100%);color:#fff;padding:76px 6% 68px}
+.bng-hero-inner,.bng-section-inner{max-width:1160px;margin:auto}
+.bng-hero-layout{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:42px}
+.bng-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:9px 14px;border-radius:30px;font-size:.78rem;letter-spacing:1.2px;font-weight:800}
+.bng-eyebrow:before{content:"";width:8px;height:8px;background:#63d7ff;border-radius:50%}
+.bng-hero h1{font-size:clamp(2.35rem,5vw,4.1rem);line-height:1.06;letter-spacing:-1.5px;margin:20px 0 18px;font-weight:900;max-width:690px}
+.bng-hero h1 span{color:#74d8ff}.bng-hero-copy{max-width:610px;margin:0 0 26px;line-height:1.8;font-size:1.05rem;color:#dceefa}
+.bng-actions{display:flex;gap:12px;flex-wrap:wrap}.bng-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 23px;border-radius:9px;text-decoration:none;font-weight:850;transition:transform .2s,box-shadow .2s}.bng-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.16)}
+.bng-btn-light{background:#fff;color:#075184}.bng-btn-outline{border:1px solid rgba(255,255,255,.7);color:#fff;background:rgba(255,255,255,.06)}
+.bng-hero-note{font-size:.83rem;color:#c5dfef;margin-top:16px}.bng-hero-visual{position:relative}
+.bng-hero-photo{width:100%;height:420px;object-fit:cover;display:block;border-radius:22px;border:1px solid rgba(255,255,255,.25);box-shadow:0 25px 65px rgba(0,0,0,.3)}
+.bng-photo-tag{position:absolute;left:-18px;bottom:24px;background:#fff;color:#123d5b;border-radius:13px;padding:15px 18px;box-shadow:0 12px 35px rgba(0,0,0,.2);font-weight:850}.bng-photo-tag small{display:block;font-size:.76rem;color:#5c7182;font-weight:600;margin-top:3px}
+.bng-proofbar{background:#fff;box-shadow:0 8px 30px rgba(18,59,90,.08);position:relative;z-index:2}.bng-proof-inner{max-width:1160px;margin:auto;padding:20px 6%;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center}.bng-proof-item{font-size:.9rem;font-weight:800;color:#164b70}.bng-proof-item span{display:block;color:#6c7e8e;font-size:.77rem;font-weight:600;margin-top:4px}
+.bng-section{padding:66px 6%}.bng-section.alt{background:#f3f8fb}.bng-kicker{text-transform:uppercase;letter-spacing:1.5px;color:#1385bd;font-weight:850;font-size:.77rem}.bng-section h2{font-size:clamp(1.7rem,3vw,2.45rem);line-height:1.15;margin:9px 0 15px;color:#123b5a;letter-spacing:-.6px}.bng-section p{line-height:1.8;color:#536579;max-width:850px}
+.bng-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:28px}.bng-card{background:#fff;border:1px solid #e2edf4;border-radius:16px;padding:25px 23px;box-shadow:0 9px 26px rgba(15,65,95,.055);transition:transform .2s,box-shadow .2s}.bng-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(15,65,95,.1)}.bng-card h3{color:#0c527f;margin:0 0 10px;font-size:1.08rem}.bng-card p{margin:0;font-size:.93rem}.bng-card-icon{width:43px;height:43px;border-radius:12px;background:#e9f6fc;display:grid;place-items:center;font-size:1.35rem;margin-bottom:16px}
+.bng-area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.bng-area{background:#e8f4fb;color:#15577e;border:1px solid #d7eaf5;border-radius:30px;padding:10px 16px;font-weight:750;font-size:.88rem}
+.bng-small-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.bng-small-grid a{background:#fff;border:1px solid #e1ebf1;padding:18px;border-radius:12px;text-decoration:none;color:#14547a;font-weight:800}.bng-small-grid a:hover{border-color:#6ab8dd}
+.bng-faq details{background:#fff;border:1px solid #e0eaf0;border-radius:12px;padding:18px 20px;margin:12px 0}.bng-faq summary{font-weight:800;color:#174c70;cursor:pointer}.bng-faq details p{margin-bottom:0}
+.bng-final{background:linear-gradient(120deg,#0b4772,#092c4b);color:#fff;text-align:center;padding:58px 6%}.bng-final h2{color:#fff}.bng-final p{color:#e1f2fc;margin:0 auto 22px}
+.bng-sticky-cta{display:none}
+@media(max-width:820px){.bng-hero-layout{grid-template-columns:1fr;gap:28px}.bng-hero-photo{height:300px}.bng-photo-tag{left:12px}.bng-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.bng-hero{padding:48px 6% 42px}.bng-hero h1{font-size:2.35rem}.bng-hero-photo{height:235px}.bng-proof-inner{grid-template-columns:1fr;padding:18px 6%;gap:12px}.bng-proof-item{padding:5px 0}.bng-grid,.bng-small-grid{grid-template-columns:1fr}.bng-section{padding:48px 6%}.bng-sticky-cta{position:fixed;display:flex;z-index:9999;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -5px 24px rgba(0,0,0,.14);gap:9px}.bng-sticky-cta a{flex:1;text-align:center;text-decoration:none;padding:13px 8px;border-radius:9px;font-weight:850;font-size:.9rem}.bng-sticky-call{background:#eaf4fa;color:#0a4d78}.bng-sticky-wa{background:#0b9c63;color:#fff}body{padding-bottom:68px}}
 </style>
 {% endblock %}
 
 {% block content %}
 <main>
 <section class="bng-hero">
-  <div class="bng-hero-inner">
-    <div style="font-weight:800;letter-spacing:1px">AIR COOL TECH SERVICES · BANGALORE</div>
-    <h1>AC Repair &amp; AC Service in Bangalore</h1>
-    <p>Looking for AC repair in Bangalore? Get in touch with Air Cool Tech Services for doorstep assistance with AC breakdowns, servicing, installation, uninstallation and cooling issues. Our technicians visit customers at their locations.</p>
-    <div class="bng-actions">
-      <a class="bng-btn bng-btn-light" href="tel:+918630872674">Call +91 86308 72674</a>
-      <a class="bng-btn bng-btn-outline" href="https://wa.me/918630872674?text=Hello%2C%20I%20need%20AC%20service%20in%20Bangalore." target="_blank" rel="noopener">WhatsApp for AC Service</a>
+  <div class="bng-hero-inner bng-hero-layout">
+    <div>
+      <div class="bng-eyebrow">AIR COOL TECH SERVICES · BANGALORE</div>
+      <h1>Expert <span>AC Repair</span> &amp; Service in Bangalore</h1>
+      <p class="bng-hero-copy">AC not cooling, leaking water or making unusual noise? Get in touch for doorstep AC repair, servicing, installation and maintenance enquiries across Bangalore.</p>
+      <div class="bng-actions">
+        <a class="bng-btn bng-btn-light" href="tel:+918630872674">☎ Call +91 86308 72674</a>
+        <a class="bng-btn bng-btn-outline" href="https://wa.me/918630872674?text=Hello%2C%20I%20need%20AC%20service%20in%20Bangalore." target="_blank" rel="noopener">WhatsApp for AC Service</a>
+      </div>
+      <div class="bng-hero-note">Home and workplace service enquiries · Share your area to confirm availability</div>
+    </div>
+    <div class="bng-hero-visual">
+      <img class="bng-hero-photo" src="{{ url_for('static', filename='images/ac_repair.webp') }}" alt="Air conditioner repair and servicing by Air Cool Tech Services in Bangalore" fetchpriority="high" />
+      <div class="bng-photo-tag">AC Repair &amp; Maintenance<small>Service enquiries across Bangalore</small></div>
     </div>
   </div>
 </section>
+<div class="bng-proofbar">
+  <div class="bng-proof-inner">
+    <div class="bng-proof-item">Doorstep Service Enquiries<span>At your home or workplace</span></div>
+    <div class="bng-proof-item">Multiple AC Types<span>Split · Window · Cassette · VRF</span></div>
+    <div class="bng-proof-item">Direct Contact<span>Call or WhatsApp our team</span></div>
+  </div>
+</div>
 
 <section class="bng-section">
   <div class="bng-section-inner">
@@ -107,4 +133,5 @@
   </div>
 </section>
 </main>
+<div class="bng-sticky-cta"><a class="bng-sticky-call" href="tel:+918630872674">☎ Call Now</a><a class="bng-sticky-wa" href="https://wa.me/918630872674?text=Hello%2C%20I%20need%20AC%20repair%20in%20Bangalore." target="_blank" rel="noopener">WhatsApp</a></div>
 {% endblock %}
