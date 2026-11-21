@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, Response, render_template
 
 app = Flask(__name__)
 app.secret_key = 'aircool-dev-key-change-in-production'
@@ -17,6 +17,11 @@ def services():
 @app.route('/cities')
 def cities():
     return render_template('pages/cities.html')
+
+
+@app.route('/bangalore')
+def bangalore():
+    return render_template('pages/bangalore.html')
 
 
 @app.route('/about')
@@ -62,6 +67,36 @@ def privacy_policy():
 @app.route('/contact')
 def contact():
     return render_template('pages/contact.html')
+
+
+@app.route('/robots.txt')
+def robots_txt():
+    content = """User-agent: *
+Allow: /
+
+Sitemap: https://www.aircooltechservices.com/sitemap.xml
+"""
+    return Response(content, mimetype='text/plain')
+
+
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    public_paths = [
+        '/', '/services', '/cities', '/bangalore', '/about',
+        '/ac-repair', '/cassette-ac', '/vrf-ac', '/fridge-repair',
+        '/washing-machine', '/geyser-repair', '/contact',
+        '/privacy-policy'
+    ]
+    urls = ''.join(
+        f'<url><loc>https://www.aircooltechservices.com{path}</loc></url>'
+        for path in public_paths
+    )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        f'{urls}</urlset>'
+    )
+    return Response(xml, mimetype='application/xml')
 
 
 if __name__ == '__main__':
