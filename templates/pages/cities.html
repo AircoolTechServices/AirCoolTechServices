@@ -268,7 +268,7 @@
         <span class="city-tag">Available Now</span>
       </div>
     </a>
-    <a href="#Noida" class="city-card">
+    <a href="{{ url_for('noida') }}" class="city-card">
       <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&auto=format&fit=crop" alt="Noida" />
       <div class="city-overlay"></div>
       <div class="city-info">
@@ -372,6 +372,7 @@
     <div class="city-block-header">
       <div class="city-title-box">
         <h2>Premium Care in <span>Noida</span></h2>
+        <p><a href="{{ url_for('noida') }}" style="color: var(--blue); font-weight: 800;">Explore AC Repair in Noida →</a></p>
         <p>The Delhi NCR's most trusted technicians for all home appliances.</p>
       </div>
       <div class="city-cta-footer" style="margin-top: 0;">
