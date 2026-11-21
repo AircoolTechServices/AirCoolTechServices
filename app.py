@@ -19,6 +19,11 @@ def cities():
     return render_template('pages/cities.html')
 
 
+@app.route('/bangalore')
+def bangalore():
+    return render_template('pages/bangalore.html')
+
+
 @app.route('/about')
 def about():
     return render_template('pages/about.html')
